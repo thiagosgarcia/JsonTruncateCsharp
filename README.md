@@ -1,6 +1,8 @@
 # JsonTruncateCsharp
 C# json truncate functionality for limiting json Detph without trowing and exception
 
+![Nuget](https://img.shields.io/nuget/v/JsonTruncate?label=JsonTruncate)
+
 ## Usage
 There's an Extension method `SerializeObject` in `TruncateExtensions` class. 
 
