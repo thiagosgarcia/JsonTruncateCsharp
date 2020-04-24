@@ -8,11 +8,12 @@ namespace JsonTruncate
     {
         public static string SerializeObject(this object obj, int maxDepth, JsonSerializerSettings settings = default)
         {
+            maxDepth = maxDepth < 0 ? settings?.MaxDepth ?? -1 : maxDepth;
             using (var strWriter = new StringWriter())
             {
                 using (var jsonWriter = new CustomJsonTextWriter(strWriter))
                 {
-                    bool Include() => jsonWriter.CurrentDepth <= maxDepth;
+                    bool Include() => maxDepth < 0 ? true : jsonWriter.CurrentDepth <= maxDepth;
                     var resolver = new CustomContractResolver(Include);
                     var serializer = new JsonSerializer();
 
@@ -25,6 +26,10 @@ namespace JsonTruncate
                 }
                 return strWriter.ToString();
             }
+        }
+        public static string SerializeObject(this object obj, JsonSerializerSettings settings)
+        {
+            return SerializeObject(obj, settings?.MaxDepth ?? -1, settings);
         }
         public static dynamic PopulateProperties(this object obj, params object[] anotherObject)
         {
