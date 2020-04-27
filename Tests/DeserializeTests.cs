@@ -62,8 +62,7 @@ namespace Tests
         [Fact]
         public void TestListDepth()
         {
-            var str2 = @"{""Id"":1,""Reference"":[{""Id"":2,""Reference"":{}}]}";
-            var str3 = @"{""Id"":1,""Reference"":[{""Id"":2,""Reference"":{""Id"":3,""Reference"":null}}]}";
+            var str5 = @"{""Id"":1,""Reference"":[{""Id"":2,""Reference"":{""Id"":3,""Reference"":{""Id"":4,""Reference"":{""Id"":5,""Reference"":null}}}}]}";
 
             var obj = new ObjL
             {
@@ -110,12 +109,15 @@ namespace Tests
                         Reference = new Obj()
                         {
                             Id = 3,
+                            Reference = new Obj()
+                            {
+                            }
                         }
                     }
                 }
             };
-            var result2 = str2.DeserializeObject<ObjL>(2);
-            var result3 = str3.DeserializeObject<ObjL>(4);
+            var result2 = str5.DeserializeObject<ObjL>(2);
+            var result3 = str5.DeserializeObject<ObjL>(3);
             Assert.Equal(JsonConvert.SerializeObject(obj2), JsonConvert.SerializeObject(result2));
             Assert.Equal(JsonConvert.SerializeObject(obj3), JsonConvert.SerializeObject(result3));
 
