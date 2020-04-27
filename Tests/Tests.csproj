@@ -17,4 +17,13 @@
     <ProjectReference Include="..\JsonTruncate\JsonTruncate.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Resources\full.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\full2.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

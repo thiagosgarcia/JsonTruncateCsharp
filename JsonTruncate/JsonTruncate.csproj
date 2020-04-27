@@ -5,11 +5,11 @@
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>
-      C# json truncate functionality for limiting Json detph without trowing and exception
+      C# json truncate functionality for limiting Json detph without throwing and exception
     </Description>
-    <AssemblyVersion>1.0.1.0</AssemblyVersion>
-    <FileVersion>1.0.1.0</FileVersion>
-    <Version>1.0.1</Version>
+    <AssemblyVersion>1.0.2.0</AssemblyVersion>
+    <FileVersion>1.0.2.0</FileVersion>
+    <Version>1.0.2</Version>
     <AssemblyName />
     <Authors>tgarcia</Authors>
     <PackageReleaseNotes></PackageReleaseNotes>
